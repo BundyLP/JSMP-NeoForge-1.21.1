@@ -16,7 +16,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, JSmp.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB = CREATIVE_MODE_TAB.register("janskii_smp_tab",
+    public static final Supplier<CreativeModeTab> JANSKIISMP_ITEMS_TAB = CREATIVE_MODE_TAB.register("janskii_smp_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CHROMATSIUM.get()))
                     .title(Component.translatable("creativetab.janskiismp.janskiismp"))
                     .displayItems((itemDisplayParameters, output) -> {
