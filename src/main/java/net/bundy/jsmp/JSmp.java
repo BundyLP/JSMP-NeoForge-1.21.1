@@ -1,5 +1,8 @@
 package net.bundy.jsmp;
 
+import com.google.common.io.Closer;
+import net.bundy.jsmp.block.ModBlocks;
+import net.bundy.jsmp.item.ModCreativeModeTabs;
 import net.bundy.jsmp.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -31,7 +34,10 @@ public class JSmp {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -53,6 +59,7 @@ public class JSmp {
             event.accept(ModItems.CHROMATSIUM);
             event.accept(ModItems.CHROMATSIUM_COGWHEEL);
             event.accept(ModItems.CHROMATSIUM_WIRE);
+            event.accept(ModBlocks.CHROMATSIUM_BLOCK);
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
