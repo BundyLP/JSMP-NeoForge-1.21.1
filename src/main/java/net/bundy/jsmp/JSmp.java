@@ -48,7 +48,16 @@ public class JSmp {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.WOOD_SHEET);
-            event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.WOODEN_COGWHEEL);
+            event.accept(ModItems.LEAF_WIRE);
+            event.accept(ModItems.CHROMATSIUM);
+            event.accept(ModItems.CHROMATSIUM_COGWHEEL);
+            event.accept(ModItems.CHROMATSIUM_WIRE);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.WOODEN_TOOL);
+            event.accept(ModItems.CHROMATSIUM_TOOL);
         }
     }
 
